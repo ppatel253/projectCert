@@ -17,8 +17,6 @@ node {
 	}
 
 	stage('Deploy') {
-		steps {
-			ansiblePlaybook credentialsId: 'ansiblekey', inventory: '/etc/ansible/hosts', playbook: 'phpplaybook.yml'
-		}
+		ansiblePlaybook credentialsId: 'ansiblekey', inventory: '/etc/ansible/hosts', playbook: 'phpplaybook.yml'
 	}
 }
