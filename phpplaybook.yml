@@ -3,7 +3,7 @@
 #   become_user: root
   tasks:
   - name: install docker
-    yum: name=docker state=present
+    yum: name=docker state=present trust_image_content=yes
   - name: install git
     yum: name=git state=present
   - name: start docker
