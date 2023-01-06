@@ -2,13 +2,13 @@
   become: true
 #   become_user: root
   tasks:
-  - name: install docker
-    yum: name=docker state=present trust_image_content=yes
+#   - name: install docker
+#     yum: name=docker state=present trust_image_content=yes
   - name: install git
     yum: name=git state=present
   - name: start docker
     service: name=docker state=started
   - name: pull the dockerfile
-    command: docker pull devopsedu/webapp:latest
+    command: docker pull ppatel253/webapp:latest
   - name: run the dockerfile
-    command: docker run -it -P --name webappimage  devopsedu/webap
+    command: docker run -it -P --name webapp  ppatel253/webapp
